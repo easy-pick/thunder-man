@@ -9,5 +9,5 @@ public class ThunderManApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ThunderManApplication.class, args);
 	}
-
+//
 }
