@@ -11,5 +11,9 @@ import java.util.Optional;
 @Configuration
 public class JpaConfig {
 
+    @Bean
+    public AuditorAware<String> auditorAware(){
+        return ()-> Optional.of("shkim"); // TODO : 스프링 시큐리티로 인증기능 추가시 수정 필요
+    }
 
 }
