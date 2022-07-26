@@ -16,6 +16,7 @@ public interface DlUserRepository extends
 {
 
     DlUser findDlUserByUserId(String userId);
+    Long findByUserId(String userId);
 
     @Override
     default void customize(QuerydslBindings bindings, QDlUser root){

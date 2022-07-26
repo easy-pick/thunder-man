@@ -10,8 +10,8 @@
         	<a href="/"><img src="/img/bamin2.png" alt="이미지" class="bm_img"></a>
 				<form action="/auth/signup" method="post" >
 					<div class="input_aera">
-		            	<input type="text" name="username"  class="username" maxlength="20"  placeholder="아이디를 입력해 주세요"  value="${signupDto.username}" >
-						<span class="msg_box">${valid_username}</span>
+		            	<input type="text" name="userId" class="userId" maxlength="20" placeholder="아이디를 입력해 주세요" value="${signupDto.userId}" >
+						<span class="msg_box">${valid_userId}</span>
 	            	</div>          
 		               
 					<div class="input_aera">
