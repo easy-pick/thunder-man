@@ -9,22 +9,22 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @Entity
 @Table(indexes = {
         @Index(columnList = "id")
 })
-public class DlOrder {
+public class DlOrder extends AuditingFields {
 
     @Id
     @Column(length = 11)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderNum;
+    private Long id;
 
     @Setter @ManyToOne(optional = false) private DlStore dlStore;
     @Setter @ManyToOne(optional = false) private DlUser dlUser;
     @Column(nullable = false, length = 11) private Long userId;
-    @Column(nullable = false, columnDefinition = "timestamp default 'current_timestamp()'") private LocalDateTime orderDate;
+    @Column(nullable = false) private LocalDateTime orderDate;
     @Column(length = 30) private String payMethod;
     @Column(columnDefinition = "varchar(50) default '주문접수 대기 중'") private String deliveryStatus;
     @Column(nullable = false, length = 20) private String phone;

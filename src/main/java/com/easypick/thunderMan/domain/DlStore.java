@@ -8,13 +8,12 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @Entity
 @Table(indexes = {
-        @Index(columnList = "id"),
-        @Index(columnList = "storeId")
+        @Index(columnList = "id")
 })
-public class DlStore {
+public class DlStore extends AuditingFields {
 
     @Id
     @Column(length = 11)

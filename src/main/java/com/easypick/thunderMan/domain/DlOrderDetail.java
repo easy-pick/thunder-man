@@ -8,19 +8,19 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @Entity
 @Table(indexes = {
-        @Index(columnList = "orderNum")
+        @Index(columnList = "id")
 })
-public class DlOrderDetail {
+public class DlOrderDetail extends AuditingFields {
 
     @Id
     @Column(length = 11)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false) private DlOrder dlOrder; 
+    @Setter @ManyToOne(optional = false) private DlOrder dlOrder;
     @Column(length = 2000) private String foodInfo;
 
 }

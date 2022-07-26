@@ -10,12 +10,12 @@ import java.util.Set;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @Entity
 @Table(indexes = {
         @Index(columnList = "id")
 })
-public class DlFood {
+public class DlFood extends AuditingFields{
 
     @Id
     @Column(length = 11)
