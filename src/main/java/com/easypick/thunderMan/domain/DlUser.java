@@ -1,5 +1,6 @@
 package com.easypick.thunderMan.domain;
 
+import com.easypick.thunderMan.dto.SignupDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -39,15 +40,12 @@ public class DlUser extends AuditingFields {
         this.role = this.role == null ? "ROLE_USER" : this.role;
     }
 
-
-
-
     public DlUser(String userId, String password, String email, String nickname, String phone){
-        this.userId = userId;
-        this.password = password;
-        this.email = email;
-        this.nickname = nickname;
-        this.phone = phone;
+        this.userId = userId.strip();
+        this.password = password.strip();
+        this.email = email.strip();
+        this.nickname = nickname.strip();
+        this.phone = phone.strip();
 
     }
 
@@ -56,5 +54,17 @@ public class DlUser extends AuditingFields {
         return new DlUser(userId, password, email, nickname, phone);
     }
 
+    public DlUser(SignupDto signupDto){
+        this.userId = signupDto.getUserId();
+        this.password = signupDto.getPassword();
+        this.email = signupDto.getEmail();
+        this.nickname = signupDto.getNickname();
+        this.phone = signupDto.getPhone();
 
+    }
+
+    public static DlUser of(SignupDto signupDto){
+
+        return new DlUser(signupDto);
+    }
 }
