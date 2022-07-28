@@ -3,6 +3,7 @@ package com.easypick.thunderMan.repository;
 
 import com.easypick.thunderMan.config.JpaConfig;
 import com.easypick.thunderMan.domain.DlUser;
+import com.easypick.thunderMan.dto.SignupDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,21 +24,52 @@ public class DlUserRepositoryTest {
         this.dlUserRepository = dlUserRepository;
     }
 
-    @DisplayName("user Select Test")
+    @DisplayName("User 조회")
     @Test
-    void giveUserName_whenSelecting_thenWorksFine(){
+    void givenUserId_whenSelecting_thenWorksFine(){
 
         // Given
         String userId = "admin1234";
 
         // When
         DlUser dlUser = dlUserRepository.findDlUserByUserId(userId);
-
+        System.out.println("dlUser :::: " + dlUser);
         // Then
         assertThat(dlUser.getPhone()).isEqualTo("01082188000");
 
     }
 
+    @DisplayName("User 회원가입 Test")
+    @Test
+    void givenSignUpUserInfo_whenSaving_thenReturnsUserCreate() {
 
+
+        // Given
+        String userId = "testUser1234";
+        String password = "testUser1234";
+        String email = "test@test.com";
+        String phone = "01012345678";
+        String nickName = "테스트유저";
+
+        SignupDto signupDto = new SignupDto();
+
+        signupDto.setUserId(userId);
+        signupDto.setPassword(password);
+        signupDto.setEmail(email);
+        signupDto.setPhone(phone);
+        signupDto.setNickname(nickName);
+
+        DlUser signUpUser = DlUser.of(signupDto);
+
+        // When
+
+        dlUserRepository.save(signUpUser);
+        DlUser user = dlUserRepository.findDlUserByUserId(userId);
+
+        // Then
+        System.out.println("user :::::::::: " + user.toString());
+        assertThat(user).isEqualTo(signUpUser);
+
+    }
 
 }

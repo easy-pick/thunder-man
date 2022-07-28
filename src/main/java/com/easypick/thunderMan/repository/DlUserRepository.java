@@ -18,6 +18,7 @@ public interface DlUserRepository extends
 {
 
     DlUser findDlUserByUserId(String userId);
+    Long findByUserId(String userId);
 
     Optional<DlUser> findByUserId(String userId);
 
