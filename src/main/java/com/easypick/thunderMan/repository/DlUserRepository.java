@@ -8,6 +8,8 @@ import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.Optional;
+
 @RepositoryRestResource
 public interface DlUserRepository extends
         JpaRepository<DlUser, Long>
@@ -16,6 +18,8 @@ public interface DlUserRepository extends
 {
 
     DlUser findDlUserByUserId(String userId);
+
+    Optional<DlUser> findByUserId(String userId);
 
     @Override
     default void customize(QuerydslBindings bindings, QDlUser root){

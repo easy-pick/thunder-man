@@ -3,6 +3,7 @@ package com.easypick.thunderMan.controller;
 import com.easypick.thunderMan.dto.SignupDto;
 import com.easypick.thunderMan.service.AuthService;
 import com.easypick.thunderMan.utils.Script;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 import java.util.Map;
 
+@Slf4j
 @Controller
 public class AuthController {
 
@@ -21,6 +23,7 @@ public class AuthController {
 	
 	@GetMapping("/auth/signin")
 	public String signin() {
+		log.info("============= request GetMapping /auth/signin ==============");
 	    return "auth/signin";
 	}
 	
@@ -62,7 +65,7 @@ public class AuthController {
 		}
 
 		//username이 이미 존재할시 키값에 오류메시지 저장
-		if(authService.userIdChk(signupDto.getUserId()) != 0 ) {
+		if( !authService.userIdChk(signupDto.getUserId()) ) {
 			model.addAttribute("valid_username","이미 등록된 아이디입니다");
 			return "auth/signup";
 		}
