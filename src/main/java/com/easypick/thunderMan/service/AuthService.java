@@ -8,7 +8,7 @@ import java.util.Map;
 public interface AuthService {
 
     public Map<String, String> validHandling(Errors errors);
-    public long userIdChk(String userId);
+    public boolean userIdChk(String userId);
     public void signup(SignupDto signupDto);
 
 }

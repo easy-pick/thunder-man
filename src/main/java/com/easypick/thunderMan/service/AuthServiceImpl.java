@@ -36,11 +36,14 @@ public class AuthServiceImpl implements AuthService{
 
 	//아이디 중복확인
 	@Transactional(readOnly = true)
-	public long userIdChk(String userId) {
+	public boolean userIdChk(String userId) {
 //		return authMapper.usernameChk(userId);
 		DlUser dlUser = dlUserRepository.findDlUserByUserId(userId);
-		long idCheck = dlUserRepository.count();
+		boolean idCheck = false;
+		if( dlUser == null ) idCheck = true;
+		
 		return idCheck;
+
 	}
 
 	//회원가입
