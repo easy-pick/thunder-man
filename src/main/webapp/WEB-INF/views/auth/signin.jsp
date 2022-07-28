@@ -9,9 +9,9 @@
         <div class="login_box">
 			<a href="/"><img src="/img/bamin2.png" alt="이미지" class="bm_img"></a>    
             
-            <form action="/auth/signin" method="post">
+            <form action="/auth/login" method="post">
  
-	            <div class="input_aera"><input type="text" name="username"  value="" required placeholder="아이디를 입력해주세요" maxlength="30" ></div>
+	            <div class="input_aera"><input type="text" name="userId"  value="" required placeholder="아이디를 입력해주세요" maxlength="30" ></div>
 	            <div class="input_aera"><input type="password" name="password" value="" required placeholder="비밀번호를 입력해 주세요" maxlength="30"></div>
  
 				<input type="submit" value="로그인" class="login_btn" >

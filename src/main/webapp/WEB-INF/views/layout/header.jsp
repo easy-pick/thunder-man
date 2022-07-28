@@ -6,7 +6,7 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal"/>
+	<sec:authentication property="principal" var="userPrincipal"/>
 </sec:authorize>
 
 
@@ -39,7 +39,7 @@ header .admin_page_btn a {
 			<a href="/"><img src="/img/baemin.jpg" alt="이미지"></a>
 
 			<!-- 임시 -->
-			<c:if test="${principal.role eq 'ROLE_ADMIN' }"> 
+			<c:if test="${principal.role eq 'ROLE_ADMIN' }">
 				<div class="admin_page_btn">
 					<div>
 						<a href="/admin/main">사장님 페이지</a>
