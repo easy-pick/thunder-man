@@ -15,13 +15,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DisplayName("JPA 연결 테스트")
 @Import(JpaConfig.class)
 @DataJpaTest
-public class DlUserRepositoryTest {
+public class UserRepositoryTest {
 
-    private final DlUserRepository dlUserRepository;
+    private final UserRepository userRepository;
 
-    public DlUserRepositoryTest(@Autowired DlUserRepository dlUserRepository ){
+    public UserRepositoryTest(@Autowired UserRepository userRepository){
 
-        this.dlUserRepository = dlUserRepository;
+        this.userRepository = userRepository;
     }
 
     @DisplayName("user Select Test")
@@ -32,7 +32,7 @@ public class DlUserRepositoryTest {
         String userId = "admin1234";
 
         // When
-        DlUser dlUser = dlUserRepository.findDlUserByUserId(userId);
+        DlUser dlUser = userRepository.findDlUserByUserId(userId);
 
         // Then
         assertThat(dlUser.getPhone()).isEqualTo("01082188000");
@@ -63,8 +63,8 @@ public class DlUserRepositoryTest {
 
         // When
 
-        dlUserRepository.save(signUpUser);
-        DlUser user = dlUserRepository.findDlUserByUserId(userId);
+        userRepository.save(signUpUser);
+        DlUser user = userRepository.findDlUserByUserId(userId);
 
         // Then
         System.out.println("user :::::::::: " + user.toString());

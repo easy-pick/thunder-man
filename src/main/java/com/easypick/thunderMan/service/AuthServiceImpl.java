@@ -2,7 +2,7 @@ package com.easypick.thunderMan.service;
 
 import com.easypick.thunderMan.domain.DlUser;
 import com.easypick.thunderMan.dto.SignupDto;
-import com.easypick.thunderMan.repository.DlUserRepository;
+import com.easypick.thunderMan.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,7 +24,7 @@ public class AuthServiceImpl implements AuthService {
 	PasswordEncoder passwordEncoder;
 
 	@Autowired
-    DlUserRepository dlUserRepository;
+	UserRepository userRepository;
 
 	@Transactional
 	public Map<String, String> validHandling(Errors errors) {
@@ -40,7 +40,7 @@ public class AuthServiceImpl implements AuthService {
 	@Transactional(readOnly = true)
 	public boolean userIdChk(String userId) {
 //		return authMapper.usernameChk(userId);
-		DlUser dlUser = dlUserRepository.findDlUserByUserId(userId);
+		DlUser dlUser = userRepository.findDlUserByUserId(userId);
 		boolean idCheck = false;
 		if( dlUser == null ) idCheck = true;
 		
@@ -54,7 +54,7 @@ public class AuthServiceImpl implements AuthService {
 
 		signupDto.setPassword(passwordEncoder.encode(signupDto.getPassword()));
 		DlUser signUser = DlUser.of(signupDto);
-		dlUserRepository.save(signUser);
+		userRepository.save(signUser);
 	}
 
 
