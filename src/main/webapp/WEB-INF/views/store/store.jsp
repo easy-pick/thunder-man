@@ -54,7 +54,7 @@
 				
                 <ul class="store">
                 	<c:set var="store_admin" value="/store" />
-                	<c:forEach items="${storeList }" var="storeList">
+                	<c:forEach items="${storeList}" var="storeList">
                     	<%@ include file="/WEB-INF/views/store/store-li.jsp" %>
                     </c:forEach>
                 </ul>

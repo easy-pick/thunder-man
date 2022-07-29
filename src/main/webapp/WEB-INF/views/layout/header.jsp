@@ -50,12 +50,12 @@ header .admin_page_btn a {
 			
 			<div class="menu_tab_box active">
 				<div class="menu_tab">
-					<span> </span>
-					<span> </span>
-					<span> </span>
+					<span> 1 </span>
+					<span> 2 </span>
+					<span> 3 </span>
 				</div>
 			</div>
-
+<%--			<a href="/logout"><img src="/img/logout.png" alt="이미지"></a>--%>
 		</div>
 	</header>
 	<!-- 헤더 -->
