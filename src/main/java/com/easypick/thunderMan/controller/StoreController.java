@@ -1,6 +1,7 @@
 package com.easypick.thunderMan.controller;
 
-import com.easypick.thunderMan.dto.DlStoreDto;
+import com.easypick.thunderMan.dto.response.StoreResponse;
+import com.easypick.thunderMan.dto.response.StoreWithFoodsResponse;
 import com.easypick.thunderMan.service.StoreService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,10 @@ public class StoreController {
 	@Autowired
 	StoreService storeService;
 	
-	@GetMapping("/store/{category}/{address1}")
-	public String store(@PathVariable long category, @PathVariable long address1, Model model) {
+	@GetMapping("/store/{category}/{address1}/{page}")
+	public String store(@PathVariable long category, @PathVariable long address1, @PathVariable int page, Model model) {
 		
-		List<DlStoreDto> storeList = storeService.storeList(category, address1 / 100);
+		List<StoreResponse> storeList = storeService.storeList(category, address1 / 100).map(StoreResponse::from).toList();
 		log.debug("storeList :::  " + storeList);
 		model.addAttribute("storeList", storeList);
 
@@ -31,7 +32,7 @@ public class StoreController {
 	@GetMapping("/store/{id}/detail")
 	public String storeDetail(@PathVariable long id, Model model) {
 
-		DlDto storeDetailDto = storeService.storeDetail(id);
+		StoreWithFoodsResponse storeDetailDto = StoreWithFoodsResponse.from(storeService.storeDetail(id));
 
 		model.addAttribute("store", storeDetailDto);
 

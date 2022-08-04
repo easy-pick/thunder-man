@@ -78,7 +78,7 @@ $(".category li").click(function(){
 	
 	const index = $(this).index();
 	
-	location.href = "/store/" + (100+index) + "/" +address1;
+	location.href = "/store/" + (100+index) + "/" +address1 + "/1" ;
 })
 
 

@@ -40,6 +40,7 @@ public class DlStore extends AuditingFields {
 
     @OrderBy("foodDec DESC")
     @OneToMany(mappedBy = "dlStore", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private final Set<DlFood> dlFoods = new LinkedHashSet<>(); // 스토어 판매요리
 
     // insert query 실행 전 default value 값 처리를 위하여 작성
