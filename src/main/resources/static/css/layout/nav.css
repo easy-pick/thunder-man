@@ -1,5 +1,5 @@
 /* 하단 메뉴 */
-nav {
+#footbar {
     height: 80px;
     border-top:1px solid #ccc;
     position: sticky;
@@ -51,31 +51,31 @@ nav ul li:nth-child(5) a {
 }
 
 nav ul li a:hover {
-    transform: scale(1.15); 
+    transform: scale(1.15);
 }
 
 
 @media (max-width:1023px) {
-	nav ul {
-	    width: 100%;
-	}
+    nav ul {
+        width: 100%;
+    }
 }
 @media  (max-width:767px) {
 
     nav {
-        height: 65px;
+        height: auto;
     }
 
     nav ul li a {
         display: block;
-	    width: 45px;
+        width: 45px;
         height: 45px;
     }
 
 }
 
 
-  
+
 
 
 /* 하단 메뉴 */
