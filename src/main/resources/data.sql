@@ -1,7 +1,6 @@
-INSERT INTO dl_user
-(user_id, password, email, nickname, `point`, phone, rating, `role`, created_at, created_by, modified_at,
- modified_by)
-VALUES('admin1234', '$2a$10$Kzu/o/y6qTFrYc5f/3pdk.RlyiAbh9M5XnsvEqrK/0mUTa0APNZSS', 'sdfsa@2.2', 'asgsd', 0, '01082188000', '0', 'ROLE_USER', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_user
+(id, created_at, created_by, modified_at, modified_by, email, nickname, password, phone, `point`, rating, `role`, user_id)
+VALUES(2, '2022-08-08 11:11:38.000', 'shkim', '2022-08-08 11:11:38.000', 'shkim', 'jkmokoko@gmail.com', '회원', '{bcrypt}$2a$10$8pd/thmim6pbVDoZoqLxN.MxMECo6lJSR/lYGdFZJkZjxtXrahoMa', '01082188000', 0, NULL, 'ROLE_USER', 'admin123');
 
 insert into dl_store (id, created_at, created_by, modified_at, modified_by, category, closing_time, delivery_time, delivery_tip, min_delivery, opening_time, store_address1, store_address2, store_address3, store_des, store_img, store_name, store_phone, store_thumb, store_owner) values (1, '2022-06-26 16:03:01', 'Wald Walklate', '2021-09-25 10:54:32', 'Natasha Katt', 106, 53, 15, 4715, 8632, 80, '60320 Delladonna Park', 'Columbus', 'Rusk', 'Northview', null, 'California Resources Corporation', '9363803672', null, 'Rita Dearle-Palser');
 insert into dl_store (id, created_at, created_by, modified_at, modified_by, category, closing_time, delivery_time, delivery_tip, min_delivery, opening_time, store_address1, store_address2, store_address3, store_des, store_img, store_name, store_phone, store_thumb, store_owner) values (2, '2021-10-10 20:47:23', 'Natala Leynagh', '2022-07-25 17:04:11', 'Robyn Veevers', 108, 53, 28, 4236, 7329, 78, '56 Elmside Place', 'Vahlen', 'Carey', 'Stone Corner', null, 'Infinera Corporation', '1626293738', null, 'Lorens Litherland');
