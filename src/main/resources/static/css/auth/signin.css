@@ -31,7 +31,7 @@ main {
  
 .login_box .login_btn,
 #login_btn  {
-	background: #2AC1BC;
+	background: #FAE100;
 	border-radius: 10px;
 	width: 80%;
 	height: 45px;
@@ -61,7 +61,7 @@ input[type="checkbox"] {
 	display: none;
 }
 input[type="checkbox"]:checked ~ i{
-	color: #2AC1BC;
+	color: #FAE100;
 }
  
 #oauth_login div {

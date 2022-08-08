@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/layout/link.jsp" %>
 
+<link rel="stylesheet" href="/css/layout/nav.css">
 <link rel="stylesheet" href="/css/store/store.css">
 <link rel="stylesheet" href="/css/store/store-li.css">
 

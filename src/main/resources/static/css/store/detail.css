@@ -64,7 +64,7 @@ nav .inf .store_review_count:after {
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
-	background: #2AC1BC;
+	background: #FAE100;
 	box-shadow: 0px 2px 3px 0px rgb(0 0 0/ 25%);
 	display: flex;
 	justify-content: center;
@@ -85,9 +85,9 @@ nav .inf .store_review_count:after {
 	right: 20%;
 	font-size: 13px;
 	text-align: center;
-	color: #2AC1BC;
+	color: #FAE100;
 	background: #fff;
-	border: 2px solid #2AC1BC;;
+	border: 2px solid #FAE100;
 	vertical-align: middle;
 	font-weight: 1000;
 	display: none;

@@ -36,7 +36,7 @@ input[type="number"]::-webkit-inner-spin-button
 }
 
 .swal-button.swal-button--confirm {
-	background: #2AC1BC;
+	background: #FAE100;
 	color: #fff;
 }
 
