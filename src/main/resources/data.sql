@@ -990,5 +990,355 @@ insert into dl_store (id, created_at, created_by, modified_at, modified_by, cate
 insert into dl_store (id, created_at, created_by, modified_at, modified_by, category, closing_time, delivery_time, delivery_tip, min_delivery, opening_time, store_address1, store_address2, store_address3, store_des, store_img, store_name, store_phone, store_thumb, store_owner) values (985, '2021-10-01 08:44:35', 'Joyce Orleton', '2022-03-04 15:13:38', 'Petronilla Menel', 109, 49, 18, 3524, 5824, 63, '83 Del Sol Circle', 'Golden Leaf', 'Debra', 'Moulton', null, 'Jensyn Acquistion Corp.', '5297011633', null, 'Kendricks Barbara');
 
 INSERT INTO thunder_man.dl_food
-(created_at, created_by, modified_at, modified_by, food_dec, food_img, food_name, food_price, food_thumb, dl_store_id, delete_yn)
-values( now() , 'shkim', now(), 'shkim', '소개 1', 'img/none', '고기1', 1110, 'img/none', 1, 'N');
+(id, created_at, created_by, modified_at, modified_by, delete_yn, food_dec, food_img, food_name, food_price, food_thumb, dl_store_id)
+VALUES(1, '2022-08-08 06:08:02.000', 'shkim', '2022-08-08 06:08:02.000', 'shkim', 'N', '소개 1', '/img/cutlet3.png', '돈까스', 5000, '/img/cutlet3.png', 1);
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(1,'도미노피자',14000,'불고기','\\img\\pizza3.png','\\img\\pizza3.png', now(), 'shkim', now(), 'shkim'),
+(2,'빅스타피자',18000,'불고기','\\img\\pizza1.png','\\img\\pizza1.png', now(), 'shkim', now(), 'shkim'),
+(3,'피자스쿨',12000,'불고기','\\img\\pizza2.png','\\img\\pizza2.png', now(), 'shkim', now(), 'shkim'),
+(55,'Re커피',8752,'Rendezvous','/img/dessert1.png','/img/dessert1.png', now(), 'shkim', now(), 'shkim'),
+(58,'Pr돈까스',11608,'Prizm','/img/cutlet1.png','/img/cutlet1.png', now(), 'shkim', now(), 'shkim'),
+(82,'Ga도시락',14121,'Gallardo','/img/dosilak1.jpeg','/img/dosilak1.jpeg', now(), 'shkim', now(), 'shkim'),
+(61,'RX돈까스',7321,'RX-7','/img/cutlet2.png','/img/cutlet2.png', now(), 'shkim', now(), 'shkim'),
+(54,'Su커피',13466,'Sunbird','/img/dessert2.png','/img/dessert2.png', now(), 'shkim', now(), 'shkim'),
+(60,'Ya돈까스',5223,'Yaris','/img/cutlet3.png','/img/cutlet3.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(67,'To족발',4280,'Town Car','/img/jockbal1.png','/img/jockbal1.png', now(), 'shkim', now(), 'shkim'),
+(47,'Nu버거',9321,'Nubira','/img/hamburger1.png','/img/hamburger1.png', now(), 'shkim', now(), 'shkim'),
+(51,'Co분식',6589,'Corvette','/img/bunsik1.png','/img/bunsik1.png', now(), 'shkim', now(), 'shkim'),
+(69,'Vi족발',14373,'Vitara','/img/jockbal2.png','/img/jockbal2.png', now(), 'shkim', now(), 'shkim'),
+(61,'40돈까스',16437,'4000s','/img/cutlet4.png','/img/cutlet4.png', now(), 'shkim', now(), 'shkim'),
+(70,'Su찌개',13387,'Suburban 2500','/img/hansik1.jpeg','/img/hansik1.jpeg', now(), 'shkim', now(), 'shkim'),
+(46,'A4버거',16026,'A4','/img/hamburger2.png','/img/hamburger2.png', now(), 'shkim', now(), 'shkim'),
+(79,'Tu1인분',16173,'Tucson','/img/1inbun.jpeg','/img/1inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(68,'ES족발',3121,'ES','/img/jockbal3.png','/img/jockbal3.png', now(), 'shkim', now(), 'shkim'),
+(74,'Fi한식',6272,'Fifth Ave','/img/hansik3.jpeg','/img/hansik3.jpeg', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(75,'QX한식',5566,'QX','/img/hansik4.jpeg','/img/hansik4.jpeg', now(), 'shkim', now(), 'shkim'),
+(78,'RS1인분',15249,'RSX','/img/2inbun.jpeg','/img/2inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(73,'GL찌개',16579,'GL-Class','/img/hansik2.jpeg','/img/hansik2.jpeg', now(), 'shkim', now(), 'shkim'),
+(61,'B-돈까스',7768,'B-Series','/img/cutlet5.png','/img/cutlet5.png', now(), 'shkim', now(), 'shkim'),
+(56,'F1커피',12502,'F150','/img/dessert3.png','/img/dessert3.png', now(), 'shkim', now(), 'shkim'),
+(54,'GX커피',18136,'GX','/img/dessert4.png','/img/dessert4.png', now(), 'shkim', now(), 'shkim'),
+(69,'Ga족발',7459,'Galant','/img/jockbal4.png','/img/jockbal4.png', now(), 'shkim', now(), 'shkim'),
+(77,'Pr한식',5126,'Prelude','/img/hansik1.jpeg','/img/hansik1.jpeg', now(), 'shkim', now(), 'shkim'),
+(80,'M-1인분',14557,'M-Class','/img/3inbun.jpeg','/img/3inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(46,'CT버거',12313,'CTS','/img/hamburger3.png','/img/hamburger3.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(57,'A6커피',16356,'A6','/img/dessert5.png','/img/dessert5.png', now(), 'shkim', now(), 'shkim'),
+(65,'RX짜장',13547,'RX','/img/chinese1.png','/img/chinese1.png', now(), 'shkim', now(), 'shkim'),
+(56,'Ra커피',15841,'Ram Van 2500','/img/dessert1.png','/img/dessert1.png', now(), 'shkim', now(), 'shkim'),
+(61,'C7돈까스',11049,'C70','/img/cutlet1.png','/img/cutlet1.png', now(), 'shkim', now(), 'shkim'),
+(85,'El도시락',8793,'Eldorado','/img/dosilak2.jpeg','/img/dosilak2.jpeg', now(), 'shkim', now(), 'shkim'),
+(60,'Ra돈까스',19374,'Ram 1500','/img/cutlet2.png','/img/cutlet2.png', now(), 'shkim', now(), 'shkim'),
+(54,'Gr커피',18451,'Grand Caravan','/img/dessert2.png','/img/dessert2.png', now(), 'shkim', now(), 'shkim'),
+(61,'Ra돈까스',13170,'Ram 2500','/img/cutlet3.png','/img/cutlet3.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(75,'VU한식',9677,'VUE','/img/hansik2.jpeg','/img/hansik2.jpeg', now(), 'shkim', now(), 'shkim'),
+(69,'Ph족발',8560,'Phantom','/img/jockbal5.png','/img/jockbal5.png', now(), 'shkim', now(), 'shkim'),
+(76,'62한식',5173,'626','/img/hansik3.jpeg','/img/hansik3.jpeg', now(), 'shkim', now(), 'shkim'),
+(59,'Bl돈까스',4186,'Blazer','/img/cutlet4.png','/img/cutlet4.png', now(), 'shkim', now(), 'shkim'),
+(83,'G-도시락',7704,'G-Class','/img/dosilak3.jpeg','/img/dosilak3.jpeg', now(), 'shkim', now(), 'shkim'),
+(81,'Ty1인분',19580,'Typ-1','/img/4inbun.jpeg','/img/4inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(56,'Tr커피',17217,'Truck','/img/dessert3.png','/img/dessert3.png', now(), 'shkim', now(), 'shkim'),
+(71,'Jo찌개',10126,'Journey','/img/hansik3.jpeg','/img/hansik3.jpeg', now(), 'shkim', now(), 'shkim'),
+(82,'Ca도시락',15496,'Caprice','/img/dosilak4.jpeg','/img/dosilak4.jpeg', now(), 'shkim', now(), 'shkim'),
+(57,'As커피',12483,'Astro','/img/dessert4.png','/img/dessert4.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(81,'Fi1인분',14853,'Firebird','/img/1inbun.jpeg','/img/1inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(59,'Ri돈까스',9402,'Riviera','/img/cutlet5.png','/img/cutlet5.png', now(), 'shkim', now(), 'shkim'),
+(71,'4R찌개',10909,'4Runner','/img/hansik4.jpeg','/img/hansik4.jpeg', now(), 'shkim', now(), 'shkim'),
+(84,'S-도시락',12608,'S-Class','/img/dosilak1.jpeg','/img/dosilak1.jpeg', now(), 'shkim', now(), 'shkim'),
+(80,'Le1인분',5323,'LeBaron','/img/2inbun.jpeg','/img/2inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(83,'91도시락',17997,'911','/img/dosilak2.jpeg','/img/dosilak2.jpeg', now(), 'shkim', now(), 'shkim'),
+(83,'Go도시락',19231,'Golf','/img/dosilak3.jpeg','/img/dosilak3.jpeg', now(), 'shkim', now(), 'shkim'),
+(69,'Di족발',3964,'Discovery','/img/jockbal1.png','/img/jockbal1.png', now(), 'shkim', now(), 'shkim'),
+(60,'Du돈까스',3843,'Durango','/img/cutlet1.png','/img/cutlet1.png', now(), 'shkim', now(), 'shkim'),
+(68,'La족발',17259,'Laser','/img/jockbal2.png','/img/jockbal2.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(67,'Ga족발',11315,'Galant','/img/jockbal3.png','/img/jockbal3.png', now(), 'shkim', now(), 'shkim'),
+(80,'Im1인분',13489,'Impreza','/img/3inbun.jpeg','/img/3inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(76,'19한식',14210,'190E','/img/hansik4.jpeg','/img/hansik4.jpeg', now(), 'shkim', now(), 'shkim'),
+(61,'MD돈까스',7933,'MDX','/img/cutlet2.png','/img/cutlet2.png', now(), 'shkim', now(), 'shkim'),
+(83,'Ca도시락',3518,'Cabriolet','/img/dosilak4.jpeg','/img/dosilak4.jpeg', now(), 'shkim', now(), 'shkim'),
+(51,'As분식',10268,'Astro','/img/bunsik2.png','/img/bunsik2.png', now(), 'shkim', now(), 'shkim'),
+(72,'XL찌개',19710,'XLR','/img/hansik1.jpeg','/img/hansik1.jpeg', now(), 'shkim', now(), 'shkim'),
+(49,'Ex버거',8236,'Express 2500','/img/hamburger4.png','/img/hamburger4.png', now(), 'shkim', now(), 'shkim'),
+(49,'Va버거',7195,'Vandura G2500','/img/hamburger5.png','/img/hamburger5.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(49,'Ed버거',10528,'Edge','/img/hamburger1.png','/img/hamburger1.png', now(), 'shkim', now(), 'shkim'),
+(70,'Gr찌개',19221,'GranTurismo','/img/hansik2.jpeg','/img/hansik2.jpeg', now(), 'shkim', now(), 'shkim'),
+(53,'Ta분식',10112,'Tahoe','/img/bunsik3.png','/img/bunsik3.png', now(), 'shkim', now(), 'shkim'),
+(83,'Eq도시락',14759,'Equator','/img/dosilak1.jpeg','/img/dosilak1.jpeg', now(), 'shkim', now(), 'shkim'),
+(80,'Je1인분',12820,'Jetta','/img/4inbun.jpeg','/img/4inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(53,'Sa분식',15307,'Sable','/img/bunsik4.png','/img/bunsik4.png', now(), 'shkim', now(), 'shkim'),
+(54,'In커피',16000,'Insight','/img/dessert5.png','/img/dessert5.png', now(), 'shkim', now(), 'shkim'),
+(70,'Ra찌개',6995,'Ram Wagon B350','/img/hansik3.jpeg','/img/hansik3.jpeg', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(50,'VS분식',6021,'VS Commodore','/img/bunsik5.png','/img/bunsik5.png', now(), 'shkim', now(), 'shkim'),
+(46,'Ri버거',13657,'Rio','/img/hamburger2.png','/img/hamburger2.png', now(), 'shkim', now(), 'shkim'),
+(82,'Su도시락',9115,'Suburban 2500','/img/dosilak2.jpeg','/img/dosilak2.jpeg', now(), 'shkim', now(), 'shkim'),
+(57,'Ex커피',18062,'Expedition','/img/dessert1.png','/img/dessert1.png', now(), 'shkim', now(), 'shkim'),
+(60,'Da돈까스',10173,'Dakota Club','/img/cutlet3.png','/img/cutlet3.png', now(), 'shkim', now(), 'shkim'),
+(56,'Si커피',6084,'Sierra Denali','/img/dessert2.png','/img/dessert2.png', now(), 'shkim', now(), 'shkim'),
+(67,'Tr족발',12091,'Tribeca','/img/jockbal4.png','/img/jockbal4.png', now(), 'shkim', now(), 'shkim'),
+(64,'tC짜장',5318,'tC','/img/chinese2.png','/img/chinese2.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(56,'Es커피',13515,'Escape','/img/dessert3.png','/img/dessert3.png', now(), 'shkim', now(), 'shkim'),
+(83,'El도시락',11969,'Eldorado','/img/dosilak3.jpeg','/img/dosilak3.jpeg', now(), 'shkim', now(), 'shkim'),
+(65,'Di짜장',12835,'Diablo','/img/chinese3.png','/img/chinese3.png', now(), 'shkim', now(), 'shkim'),
+(58,'Ec돈까스',18700,'Eclipse','/img/cutlet4.png','/img/cutlet4.png', now(), 'shkim', now(), 'shkim'),
+(65,'Mi짜장',11206,'Miata MX-5','/img/chinese4.png','/img/chinese4.png', now(), 'shkim', now(), 'shkim'),
+(51,'Na분식',14833,'Navigator','/img/bunsik1.png','/img/bunsik1.png', now(), 'shkim', now(), 'shkim'),
+(64,'Mi짜장',6754,'Miata MX-5','/img/chinese5.png','/img/chinese5.png', now(), 'shkim', now(), 'shkim'),
+(70,'Ga찌개',13116,'Galant','/img/hansik4.jpeg','/img/hansik4.jpeg', now(), 'shkim', now(), 'shkim'),
+(85,'Mi도시락',5303,'Mirage','/img/dosilak4.jpeg','/img/dosilak4.jpeg', now(), 'shkim', now(), 'shkim'),
+(80,'Pa1인분',16196,'Park Avenue','/img/1inbun.jpeg','/img/1inbun.jpeg', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(57,'MP커피',10599,'MPV','/img/dessert4.png','/img/dessert4.png', now(), 'shkim', now(), 'shkim'),
+(62,'X6짜장',17391,'X6 M','/img/chinese1.png','/img/chinese1.png', now(), 'shkim', now(), 'shkim'),
+(80,'Co1인분',19229,'Continental GTC','/img/2inbun.jpeg','/img/2inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(51,'Da분식',5946,'Dakota','/img/bunsik2.png','/img/bunsik2.png', now(), 'shkim', now(), 'shkim'),
+(83,'Tr도시락',3917,'Trans Sport','/img/dosilak1.jpeg','/img/dosilak1.jpeg', now(), 'shkim', now(), 'shkim'),
+(52,'Su분식',6388,'Suburban 1500','/img/bunsik3.png','/img/bunsik3.png', now(), 'shkim', now(), 'shkim'),
+(65,'Pa짜장',7293,'Pajero','/img/chinese2.png','/img/chinese2.png', now(), 'shkim', now(), 'shkim'),
+(48,'GT버거',11268,'GTO','/img/hamburger3.png','/img/hamburger3.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(66,'S-족발',15674,'S-Class','/img/jockbal5.png','/img/jockbal5.png', now(), 'shkim', now(), 'shkim'),
+(71,'LS찌개',14303,'LS Hybrid','/img/hansik1.jpeg','/img/hansik1.jpeg', now(), 'shkim', now(), 'shkim'),
+(83,'Ca도시락',7067,'Camaro','/img/dosilak2.jpeg','/img/dosilak2.jpeg', now(), 'shkim', now(), 'shkim'),
+(75,'Sw한식',16189,'Swift','/img/hansik1.jpeg','/img/hansik1.jpeg', now(), 'shkim', now(), 'shkim'),
+(74,'Mi한식',19084,'Milan','/img/hansik2.jpeg','/img/hansik2.jpeg', now(), 'shkim', now(), 'shkim'),
+(47,'GT버거',10112,'GTO','/img/hamburger4.png','/img/hamburger4.png', now(), 'shkim', now(), 'shkim'),
+(80,'Co1인분',15089,'Coachbuilder','/img/3inbun.jpeg','/img/3inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(75,'Sa한식',12540,'Santa Fe','/img/hansik3.jpeg','/img/hansik3.jpeg', now(), 'shkim', now(), 'shkim'),
+(82,'Si도시락',19867,'Sierra','/img/dosilak3.jpeg','/img/dosilak3.jpeg', now(), 'shkim', now(), 'shkim'),
+(54,'Z4커피',16156,'Z4 M','/img/dessert5.png','/img/dessert5.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(69,'Ph족발',6735,'Phantom','/img/jockbal1.png','/img/jockbal1.png', now(), 'shkim', now(), 'shkim'),
+(56,'Ti커피',16316,'Tiburon','/img/dessert1.png','/img/dessert1.png', now(), 'shkim', now(), 'shkim'),
+(48,'E-버거',5409,'E-Series','/img/hamburger5.png','/img/hamburger5.png', now(), 'shkim', now(), 'shkim'),
+(81,'Av1인분',6942,'Avalanche','/img/4inbun.jpeg','/img/4inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(50,'Yu분식',16556,'Yukon XL 1500','/img/bunsik4.png','/img/bunsik4.png', now(), 'shkim', now(), 'shkim'),
+(51,'Es분식',7577,'Esprit','/img/bunsik5.png','/img/bunsik5.png', now(), 'shkim', now(), 'shkim'),
+(61,'Tu돈까스',11680,'TundraMax','/img/cutlet5.png','/img/cutlet5.png', now(), 'shkim', now(), 'shkim'),
+(46,'G-버거',8370,'G-Class','/img/hamburger1.png','/img/hamburger1.png', now(), 'shkim', now(), 'shkim'),
+(75,'Yu한식',16146,'Yukon XL 1500','/img/hansik4.jpeg','/img/hansik4.jpeg', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(53,'XC분식',17723,'XC60','/img/bunsik1.png','/img/bunsik1.png', now(), 'shkim', now(), 'shkim'),
+(54,'Co커피',5495,'Continental','/img/dessert2.png','/img/dessert2.png', now(), 'shkim', now(), 'shkim'),
+(76,'Di한식',4110,'Discovery','/img/hansik1.jpeg','/img/hansik1.jpeg', now(), 'shkim', now(), 'shkim'),
+(66,'Ch족발',8943,'Challenger','/img/jockbal2.png','/img/jockbal2.png', now(), 'shkim', now(), 'shkim'),
+(65,'Gr짜장',7325,'Grand Prix Turbo','/img/chinese3.png','/img/chinese3.png', now(), 'shkim', now(), 'shkim'),
+(60,'La돈까스',19164,'Lancer','/img/cutlet1.png','/img/cutlet1.png', now(), 'shkim', now(), 'shkim'),
+(61,'G-돈까스',19799,'G-Class','/img/cutlet2.png','/img/cutlet2.png', now(), 'shkim', now(), 'shkim'),
+(80,'Q71인분',6183,'Q7','/img/1inbun.jpeg','/img/1inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(71,'Nu찌개',19835,'Nubira','/img/hansik2.jpeg','/img/hansik2.jpeg', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(48,'Pr버거',5992,'Protege','/img/hamburger2.png','/img/hamburger2.png', now(), 'shkim', now(), 'shkim'),
+(76,'Cr한식',4873,'Crown Victoria','/img/hansik2.jpeg','/img/hansik2.jpeg', now(), 'shkim', now(), 'shkim'),
+(54,'Mu커피',17184,'Mustang','/img/dessert3.png','/img/dessert3.png', now(), 'shkim', now(), 'shkim'),
+(77,'Co한식',14202,'Cordia','/img/hansik3.jpeg','/img/hansik3.jpeg', now(), 'shkim', now(), 'shkim'),
+(49,'V8버거',11309,'V8','/img/hamburger3.png','/img/hamburger3.png', now(), 'shkim', now(), 'shkim'),
+(83,'GS도시락',16675,'GS','/img/dosilak4.jpeg','/img/dosilak4.jpeg', now(), 'shkim', now(), 'shkim'),
+(55,'Ca커피',10177,'Cavalier','/img/dessert4.png','/img/dessert4.png', now(), 'shkim', now(), 'shkim'),
+(55,'Gr커피',19955,'Grand Marquis','/img/dessert5.png','/img/dessert5.png', now(), 'shkim', now(), 'shkim'),
+(83,'Es도시락',16749,'Escape','/img/dosilak1.jpeg','/img/dosilak1.jpeg', now(), 'shkim', now(), 'shkim'),
+(74,'Sa한식',7218,'Savana 1500','/img/hansik4.jpeg','/img/hansik4.jpeg', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(68,'Si족발',5269,'Sierra 2500','/img/jockbal3.png','/img/jockbal3.png', now(), 'shkim', now(), 'shkim'),
+(54,'La커피',12037,'Land Cruiser','/img/dessert1.png','/img/dessert1.png', now(), 'shkim', now(), 'shkim'),
+(78,'Se1인분',5001,'Seville','/img/2inbun.jpeg','/img/2inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(51,'Th분식',15714,'Thunderbird','/img/bunsik2.png','/img/bunsik2.png', now(), 'shkim', now(), 'shkim'),
+(51,'50분식',19367,'5000CS','/img/bunsik3.png','/img/bunsik3.png', now(), 'shkim', now(), 'shkim'),
+(82,'Ra도시락',6127,'Raider','/img/dosilak2.jpeg','/img/dosilak2.jpeg', now(), 'shkim', now(), 'shkim'),
+(54,'Cl커피',18517,'Clubman','/img/dessert2.png','/img/dessert2.png', now(), 'shkim', now(), 'shkim'),
+(78,'Eu1인분',19664,'Eurovan','/img/3inbun.jpeg','/img/3inbun.jpeg', now(), 'shkim', now(), 'shkim'),
+(63,'8 짜장',11653,'8 Series','/img/chinese4.png','/img/chinese4.png', now(), 'shkim', now(), 'shkim'),
+(62,'Vi짜장',11554,'Viper RT/10','/img/chinese5.png','/img/chinese5.png', now(), 'shkim', now(), 'shkim');
+INSERT INTO thunder_man.dl_food (dl_store_id,food_name,food_price,food_dec,food_img,food_thumb, created_at, created_by, modified_at, modified_by) VALUES
+(67,'Ec족발',4368,'Econoline E250','/img/jockbal4.png','/img/jockbal4.png', now(), 'shkim', now(), 'shkim'),
+(49,'Es버거',13451,'Escalade','/img/hamburger4.png','/img/hamburger4.png', now(), 'shkim', now(), 'shkim'),
+(67,'In족발',6563,'Insight','/img/jockbal5.png','/img/jockbal5.png', now(), 'shkim', now(), 'shkim'),
+(85,'Mu도시락',14542,'Murciélago','/img/dosilak3.jpeg','/img/dosilak3.jpeg', now(), 'shkim', now(), 'shkim'),
+(66,'Ve족발',18448,'Verano','/img/jockbal1.png','/img/jockbal1.png', now(), 'shkim', now(), 'shkim'),
+(59,'Eu돈까스',15858,'Eurovan','/img/cutlet3.png','/img/cutlet3.png', now(), 'shkim', now(), 'shkim'),
+(85,'Si도시락',9422,'Sierra 1500','/img/dosilak4.jpeg','/img/dosilak4.jpeg', now(), 'shkim', now(), 'shkim'),
+(49,'F3버거',3149,'F350','/img/hamburger5.png','/img/hamburger5.png', now(), 'shkim', now(), 'shkim');
+
+
+
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(1,'파스타추가','4000', now(), 'shkim', now(), 'shkim', 'N'),
+(1,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(2,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(3,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(4,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(5,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(6,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(7,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(8,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(9,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(10,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(11,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(12,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(13,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(14,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(15,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(16,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(17,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(18,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(19,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(20,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(21,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(22,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(23,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(24,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(25,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(26,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(27,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(28,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(29,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(30,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(31,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(32,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(33,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(34,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(35,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(36,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(37,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(38,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(39,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(40,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(41,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(42,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(43,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(44,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(45,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(46,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(47,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(48,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(49,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(50,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(51,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(52,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(53,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(54,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(55,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(56,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(57,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(58,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(59,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(60,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(61,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(62,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(63,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(64,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(65,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(66,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(67,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(68,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(69,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(70,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(71,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(72,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(73,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(74,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(75,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(76,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(77,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(78,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(79,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(80,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(81,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(82,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(83,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(84,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(85,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(86,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(87,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(88,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(89,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(90,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(91,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(92,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(93,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(94,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(95,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(96,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(97,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(98,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(99,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(100,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(101,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(102,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(103,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(104,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(105,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(106,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(107,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(108,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(109,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(110,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(111,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(112,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(113,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(114,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(115,'양념추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(116,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(117,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(118,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(119,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(120,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(121,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(122,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(123,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(124,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(125,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(126,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(127,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(128,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(129,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(130,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(131,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(132,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(133,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(134,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(135,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(136,'공기밥추가','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(137,'양 많이','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(138,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(139,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(140,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(141,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(142,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(143,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(144,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(145,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(146,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(147,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(148,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(149,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N');
+INSERT INTO thunder_man.dl_food_option (dl_food_id,option_name,option_price, created_at, created_by, modified_at, modified_by, delete_yn) VALUES
+(150,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(151,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(152,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(153,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(154,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N'),
+(155,'양념추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(156,'공기밥추가','1000', now(), 'shkim', now(), 'shkim', 'N'),
+(157,'양 많이','3000', now(), 'shkim', now(), 'shkim', 'N');
