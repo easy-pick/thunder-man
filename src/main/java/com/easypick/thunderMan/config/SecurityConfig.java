@@ -2,7 +2,7 @@ package com.easypick.thunderMan.config;
 
 import com.easypick.thunderMan.dto.DlUserDto;
 import com.easypick.thunderMan.dto.security.UserPrincipal;
-import com.easypick.thunderMan.repository.DlUserRepository;
+import com.easypick.thunderMan.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -43,9 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
-	public UserDetailsService userDetailsService(DlUserRepository dlUserRepository){
+	public UserDetailsService userDetailsService(UserRepository userRepository){
 
-		return username -> dlUserRepository
+		return username -> userRepository
 				.findByUserId(username)
 				.map(DlUserDto::from)
 				.map(UserPrincipal::from)

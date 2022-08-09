@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>배민</title>
+    <title>번개맨</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1" >
     <link rel="stylesheet" href="/css/layout/reset.css">
     <link rel="stylesheet" href="/css/layout/header.css">

@@ -57,13 +57,15 @@ function execution_daum_address() {
 var setCookie = function(name, value, exp) {
 	var date = new Date();
 	date.setTime(date.getTime() + exp*24*60*60*1000);
-	document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+	document.cookie = name + '=' + escape(value) + ';expires=' + date.toUTCString() + ';path=/';
+	// document.cookie = escape(name + '=' + value + ';expires=' + date.toUTCString() + ';path=/');
 };
 
 //쿠키에서 주소 읽어오기 function
 var getCookie = function(name) {
 	var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-	return value? value[2] : null;
+	return value ? unescape(value[2]) : null;
+	// return value ? unescape(value[2]) : null;
 };
 
 
@@ -78,7 +80,7 @@ $(".category li").click(function(){
 	
 	const index = $(this).index();
 	
-	location.href = "/store/" + (100+index) + "/" +address1;
+	location.href = "/store/" + (100+index) + "/" +address1 + "/1" ;
 })
 
 

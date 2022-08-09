@@ -11,7 +11,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.Optional;
 
 @RepositoryRestResource
-public interface DlUserRepository extends
+public interface UserRepository extends
         JpaRepository<DlUser, Long>
         , QuerydslPredicateExecutor<DlUser>
         , QuerydslBinderCustomizer<QDlUser>

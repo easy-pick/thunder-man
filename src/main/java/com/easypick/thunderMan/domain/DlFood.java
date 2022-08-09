@@ -26,12 +26,14 @@ public class DlFood extends AuditingFields{
     @ToString.Exclude
     private Set<DlFoodOption> dlFoodOption = new LinkedHashSet<>();
 
-    @Setter @ManyToOne(optional = false) private DlStore storeId;
+
+    @Setter @ManyToOne(optional = false)  private DlStore dlStore;
 
     @Column(nullable = false, length = 100) private String foodName;
     @Column(nullable = false, length = 11) private int foodPrice;
     @Column(length = 200) private String foodDec;
     @Column(length = 200) private String foodImg;
     @Column(length = 200) private String foodThumb;
+    @Column(length = 1) private String deleteYn;
 
 }

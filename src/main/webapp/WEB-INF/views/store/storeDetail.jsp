@@ -3,13 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fm" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3fe79c008463710f6d219cb3cca3aa55&libraries=services,clusterer,drawing"></script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=39d5af499bde3b0c7e9fb7127c85580c&libraries=services,clusterer,drawing"></script>
 
  <div id="wrap">
     <nav>
-<%--    2022-07-20 주석문 	<c:set var="info" value="${store.storeInfo }" /> --%>
-        <h1 id="store_name" data-store_name="${info.storeName }" >${info.storeName }</h1>
-        <%-- <div id="is_open" data-is_open="${store.storeInfo.isOpen }"></div> --%>
+    <c:set var="info" value="${store.storeResponse() }" />
+        <h1 id="store_name" data-store_name="${info.storeName() }" >${info.storeName() }</h1>
+<%--		<div id="is_open" data-is_open="${store.storeResponse().isOpen }"></div>--%>
 		<div class="inf">
 			<div>
 				<%-- 
@@ -31,19 +31,17 @@
                  --%>
                    
            		<span><i class="fas fa-heart" ></i> 찜 </span>
-                   	
-                    
                 <span class="likes_count" data-count=0 >0</span>
                   
 			</div>
                	<div>
-               		<span class="store_review_count" data-review_count="0"> 리뷰 0</span>
+               		<span class="store_review_count" data-review_count="0"> 리뷰 0<br>
                		<span>사장님 댓글 0</span>
             	</div>
                 
-               	<div id="min_delivery" data-min_delivery="${info.mindelivery }">최소주문금액 <fm:formatNumber value="${info.mindelivery }" pattern="###,###" />원</div>
-               	<div>예상 배달시간 ${info.deliveryTime  }분</div>
-               	<div id="delivery_tip" data-delivery_tip="${info.deliveryTip }">배달팁 <fm:formatNumber value="${info.deliveryTip }" pattern="###,###" />원</div>
+               	<div id="min_delivery" data-min_delivery="${info.minDelivery() }">최소주문금액 <fm:formatNumber value="${info.minDelivery() }" pattern="###,###" />원</div>
+               	<div>예상 배달시간 ${info.deliveryTime()  }분</div>
+               	<div id="delivery_tip" data-delivery_tip="${info.deliveryTip() }">배달팁 <fm:formatNumber value="${info.deliveryTip() }" pattern="###,###" />원</div>
 		</div>
     </nav>
 
@@ -102,90 +100,91 @@
 			
 		<!-- 메뉴 탭 -->	
         <ul class="menu">
-        //추가
-     	   <c:forEach items="${store.foodList }" var="foodList" >
+
+			<c:forEach items="${store.foodWithFoodOptionResponse() }" var="foodList" >
+<%--			</c:forEach>--%>
 	            <li>
 		            <c:if test="${adminPage && SPRING_SECURITY_CONTEXT.authentication.principal.user.role == 'ROLE_ADMIN' }">
 		                <label class="menu_delete_label">
 		                	<i class="fas fa-check-square" ></i>
-		                	<input type="checkbox" class="menu_delete_checkbox" name="deleteNumber" value="${foodList.id }">
+		                	<input type="checkbox" class="menu_delete_checkbox" name="deleteNumber" value="${foodList.id() }">
 	                	</label>
 	                </c:if>
-	                
+
 	                <div class="menu_box">
 	                    <div>
-							<h2>${foodList.foodName } </h2>
-		                    
-   		                    <fm:formatNumber value="${foodList.foodPrice }" pattern="###,###" />원 
-		                    <input type="hidden" value="${foodList.storeId }" name="storeId" >
-				            <input type="hidden" value="${foodList.id }" name="foodId" class="food_id"   >
-				            <input type="hidden" value="${foodList.foodName }" name="foodName" class="food_name" >
-				            <input type="hidden" value="${foodList.foodPrice }" name="foodPrice" class="food_price"   >
-				            <input type="hidden" value="${foodList.foodDec }" name="foodDec" class="food_dec"   >
-				            <input type="hidden" value="${foodList.foodImg }" name="foodImg" class="food_img"   >
-				            <input type="hidden" value="${foodList.foodThumb }" name="foodThumb" class="food_thumb"   >
+							<h2>${foodList.foodName() } </h2>
+
+   		                    <fm:formatNumber value="${foodList.foodPrice() }" pattern="###,###" />원
+		                    <input type="hidden" value="${store.storeResponse().id() }" name="storeId" >
+				            <input type="hidden" value="${foodList.id() }" name="foodId" class="food_id"   >
+				            <input type="hidden" value="${foodList.foodName() }" name="foodName" class="food_name" >
+				            <input type="hidden" value="${foodList.foodPrice() }" name="foodPrice" class="food_price"   >
+				            <input type="hidden" value="${foodList.foodDec() }" name="foodDec" class="food_dec"   >
+				            <input type="hidden" value="${foodList.foodImg() }" name="foodImg" class="food_img"   >
+				            <input type="hidden" value="${foodList.foodThumb() }" name="foodThumb" class="food_thumb"   >
 		                </div>
-		                
-                    	<div><img src="${foodList.foodImg }" alt="이미지"></div>
+
+                    	<div><img src="${foodList.foodImg() }" alt="이미지"></div>
                     </div>
 	             </li>
 	        </c:forEach>
-        
-        
+
+
         </ul>
-		<!-- 메뉴 탭 -->	
-		
-		
+		<!-- 메뉴 탭 -->
+
+
 		<!-- 정보 탭 -->
 	    <ul class="info" >
 		    <li>
 			    <div>
 			        <h2>찾아 오시는 길</h2>
-			        
+
 			        <div id="map_box">
 			            <div id="map"></div>
-			            
+
 			            <div id="position_box">
 			                <button class="storePosition" ><i class="far fa-dot-circle"></i> 가게 위치로</button>
 			                <button class="userPosition"> <i class="far fa-dot-circle"></i> 내 위치로</button>
 			            </div>
 			        </div>
-			        
+
 			        <h2>위치안내</h2>
-			        <div id="store_address" data-address="${info.storeAddress2 }">${info.storeAddress2 }  ${info.storeAddress3 }</div>
+			        <div id="store_address" data-address="${info.storeAddress2() }">${info.storeAddress2() }  ${info.storeAddress3() }</div>
 			    </div>
 			</li>
-			 
+
 			<li>
 			    <div>
 			       <h2>가게 소개</h2>
-			       <div>${info.storeDes }</div>
+			       <div>${info.storeDes() }</div>
 			   </div>
 			</li>
-			 
+
 			<li>
 			    <div>
 			        <h2>영업 정보</h2>
-			        
+
 			        <div class="info_detail_title">
 			            <div>상호명</div>
 			            <div>영업시간</div>
 			            <div>전화번호</div>
-			            
+
 			        </div>
-			        
+
 			        <div class="info_detail">
-			            <div>${info.storeName }</div>
+			            <div>${info.storeName() }</div>
 			            <div>
-			                <span><fm:formatNumber value="${info.openingTime }" minIntegerDigits="2" />시 ~</span>
-			                <span><fm:formatNumber value="${info.closingTime }" minIntegerDigits="2" />시 </span>
+			                <span><fm:formatNumber value="${info.openingTime() }" minIntegerDigits="2" />시 ~</span>
+			                <span><fm:formatNumber value="${info.closingTime() }" minIntegerDigits="2" />시 </span>
 			            </div>
-			            <div>${info.storePhone }</div>
-			            
+			            <div>${info.storePhone() }</div>
+
 			        </div>
 			    </div>
 			</li>
-			 
+
 			<li>
 			    <div>
 			        <h2>가계 통계</h2>
@@ -194,45 +193,45 @@
 			            <div>전체 리뷰 수</div>
 			            <div>찜</div>
 			        </div>
-			        
+
 			        <div class="info_detail">
-			            <%-- 
+			            <%--
 			            <div>${info.orderCount }</div>
 			            <div>${info.reviewCount }</div>
-			            <div>${info.likesCount }</div> 
+			            <div>${info.likesCount }</div>
 			            --%>
 			        </div>
-			    </div>	
+			    </div>
 			</li>
-		    
-	    
-	       
+
+
+
 	    </ul>
-		<!-- 메뉴 탭 -->    
-	
-		
-		
-		<!-- 리뷰 탭 -->        
+		<!-- 메뉴 탭 -->
+
+
+
+		<!-- 리뷰 탭 -->
 		<ul class="comment" >
-	    
-	    
-	    
-	        
+
+
+
+
 		</ul>
 	</main>
 </div>
 
-	
-	<input type="hidden" value="${info.id }" id="store_id">
-	<input type="hidden" value="${info.category }" id="store_category">  
-	<input type="hidden" value="${info.openingTime }" id="store_opening_time"> 
-	<input type="hidden" value="${info.closingTime }" id="store_closing_time"> 
-	
-	<input type="hidden" value="${BMaddress.address2 }" id="delivery_address">
-	
-	
-	
-	
+
+	<input type="hidden" value="${info.id() }" id="store_id">
+	<input type="hidden" value="${info.category() }" id="store_category">
+	<input type="hidden" value="${info.openingTime() }" id="store_opening_time">
+	<input type="hidden" value="${info.closingTime() }" id="store_closing_time">
+
+	<input type="hidden" value="${BMaddress.address2() }" id="delivery_address">
+
+
+
+
 	
 	
 	
