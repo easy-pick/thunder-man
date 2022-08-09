@@ -1,18 +1,18 @@
 package com.easypick.thunderMan.dto;
 
-import org.springframework.data.domain.Slice;
+import java.util.Set;
 
 public record DlStoreWithFoodsDto(
         DlStoreDto store,
-        Slice<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos
+        Set<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos
 ) {
 
-    public DlStoreWithFoodsDto(DlStoreDto store, Slice<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos){
+    public DlStoreWithFoodsDto(DlStoreDto store, Set<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos){
         this.store = store;
         this.foodWithFoodOptionsDtos = foodWithFoodOptionsDtos;
     }
 
-    public static DlStoreWithFoodsDto of(DlStoreDto store, Slice<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos) {
+    public static DlStoreWithFoodsDto of(DlStoreDto store, Set<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos) {
 
         return new DlStoreWithFoodsDto(store, foodWithFoodOptionsDtos);
     }

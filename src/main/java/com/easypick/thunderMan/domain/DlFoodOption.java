@@ -20,7 +20,10 @@ public class DlFoodOption extends AuditingFields{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter @ManyToOne(optional = false) private DlFood dlFood;
+    @Setter
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "dl_food_id")
+    private DlFood dlFood;
     @Column(nullable = false, length = 100) private String optionName;
     @Column(nullable = false, length = 11) private int optionPrice;
     @Column(length = 1) private String deleteYn;

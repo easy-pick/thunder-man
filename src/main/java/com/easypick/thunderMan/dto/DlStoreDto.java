@@ -2,6 +2,10 @@ package com.easypick.thunderMan.dto;
 
 import com.easypick.thunderMan.domain.DlStore;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public record DlStoreDto(
         Long id,
         Long category,
@@ -17,10 +21,12 @@ public record DlStoreDto(
         int minDelivery,
         int deliveryTime,
         int deliveryTip,
-        String storeDes
+        String storeDes,
+
+        Set<DlFoodDto> dlFoods
 ) {
 
-    public DlStoreDto(Long id, Long category, String storeName, String storeAddress1, String storeAddress2, String storeAddress3, String storePhone, String storeImg, String storeThumb, int openingTime, int closingTime, int minDelivery, int deliveryTime, int deliveryTip, String storeDes) {
+    public DlStoreDto(Long id, Long category, String storeName, String storeAddress1, String storeAddress2, String storeAddress3, String storePhone, String storeImg, String storeThumb, int openingTime, int closingTime, int minDelivery, int deliveryTime, int deliveryTip, String storeDes, Set<DlFoodDto> dlFoods) {
         this.id = id;
         this.category = category;
         this.storeName = storeName;
@@ -36,39 +42,41 @@ public record DlStoreDto(
         this.deliveryTime = deliveryTime;
         this.deliveryTip = deliveryTip;
         this.storeDes = storeDes;
+        this.dlFoods = dlFoods;
     }
 
     public static DlStoreDto of (Long id,
-                          Long category,
-                          String storeName,
-                          String storeAddress1,
-                          String storeAddress2,
-                          String storeAddress3,
-                          String storePhone,
-                          String storeImg,
-                          String storeThumb,
-                          int openingTime,
-                          int closingTime,
-                          int minDelivery,
-                          int deliveryTime,
-                          int deliveryTip,
-                          String storeDes
-    ) {
+                                 Long category,
+                                 String storeName,
+                                 String storeAddress1,
+                                 String storeAddress2,
+                                 String storeAddress3,
+                                 String storePhone,
+                                 String storeImg,
+                                 String storeThumb,
+                                 int openingTime,
+                                 int closingTime,
+                                 int minDelivery,
+                                 int deliveryTime,
+                                 int deliveryTip,
+                                 String storeDes,
+                                 Set<DlFoodDto> dlFoods) {
                 return new DlStoreDto(id,
-                category,
-                storeName,
-                storeAddress1,
-                storeAddress2,
-                storeAddress3,
-                storePhone,
-                storeImg,
-                storeThumb,
-                openingTime,
-                closingTime,
-                minDelivery,
-                deliveryTime,
-                deliveryTip,
-                storeDes);
+                        category,
+                        storeName,
+                        storeAddress1,
+                        storeAddress2,
+                        storeAddress3,
+                        storePhone,
+                        storeImg,
+                        storeThumb,
+                        openingTime,
+                        closingTime,
+                        minDelivery,
+                        deliveryTime,
+                        deliveryTip,
+                        storeDes,
+                        dlFoods);
     }
 
     public static DlStoreDto from(DlStore dlStore
@@ -88,7 +96,9 @@ public record DlStoreDto(
                 dlStore.getMinDelivery(),
                 dlStore.getDeliveryTime(),
                 dlStore.getDeliveryTip(),
-                dlStore.getStoreDes());
+                dlStore.getStoreDes(),
+                dlStore.getDlFoods().stream().map(DlFoodDto::from)
+                        .collect(Collectors.toCollection(LinkedHashSet::new)));
     }
 
 }

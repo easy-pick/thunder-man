@@ -38,7 +38,7 @@ public record DlFoodDto(
                 this.dlFoodOption = dlFoodOption;
         }
 
-        public static DlFoodDto of(Long id, Long storeId, String foodName, int foodPrice, String foodDec, String foodImg, String foodThumb, String deleteYn, Set<DlFoodOptionDto> dlFoodOption){
+        public static DlFoodDto of(long id, long storeId, String foodName, int foodPrice, String foodDec, String foodImg, String foodThumb, String deleteYn, Set<DlFoodOptionDto> dlFoodOption){
                 return new DlFoodDto(id, storeId, foodName, foodPrice, foodDec, foodImg, foodThumb, deleteYn, dlFoodOption);
         }
 
