@@ -2,7 +2,6 @@ package com.easypick.thunderMan.service;
 
 import com.easypick.thunderMan.dto.DlFoodDto;
 import com.easypick.thunderMan.dto.DlFoodOptionDto;
-import com.easypick.thunderMan.dto.DlFoodWithFoodOptionsDto;
 import com.easypick.thunderMan.repository.FoodRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +17,6 @@ public class FoodServiceImpl implements FoodService {
 
     @Autowired
     FoodRepository foodRepository;
-    @Transactional(readOnly = true)
-    public DlFoodWithFoodOptionsDto storeFoodList(Long storeId){
-
-        log.info("검색값 : " + foodRepository.findByDlStoreId(storeId));
-//        List<DlFoodWithFoodOptionsDto> foodWithFoodOptionsDtos = foodRepository.findByDlStoreId(storeId).stream().toList();
-//        log.info("결과값 DlFoodWithFoodOptionsDto : " + foodRepository.findByDlStoreId(storeId).map(DlFoodWithFoodOptionsDto::from));
-        return null;
-    }
 
     @Override
     @Transactional(readOnly = true)
@@ -36,7 +27,7 @@ public class FoodServiceImpl implements FoodService {
         DlFoodDto dlFood = foodRepository.findById(foodId).map(DlFoodDto::from)
                 .orElseThrow(() -> new EntityNotFoundException("해당 foodId가 없습니다. foodId = " + foodId));
         dlFoodOptionDtoList = dlFood.dlFoodOption().stream().toList();
-        log.info("foodId 의 OptionList : " + dlFoodOptionDtoList );
+        log.info("foodId 의 foodId : {} OptionList : {}", foodId, dlFoodOptionDtoList );
 
         return dlFoodOptionDtoList;
     }
