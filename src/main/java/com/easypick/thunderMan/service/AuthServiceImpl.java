@@ -39,13 +39,12 @@ public class AuthServiceImpl implements AuthService {
 	//아이디 중복확인
 	@Transactional(readOnly = true)
 	public boolean userIdChk(String userId) {
-//		return authMapper.usernameChk(userId);
+
 		DlUser dlUser = userRepository.findDlUserByUserId(userId);
 		boolean idCheck = false;
 		if( dlUser == null ) idCheck = true;
 		
 		return idCheck;
-
 	}
 
 	//회원가입
@@ -55,6 +54,7 @@ public class AuthServiceImpl implements AuthService {
 		signupDto.setPassword(passwordEncoder.encode(signupDto.getPassword()));
 		DlUser signUser = DlUser.of(signupDto);
 		userRepository.save(signUser);
+		log.info("회원가입 성공 : signUser : {} " , signUser);
 	}
 
 

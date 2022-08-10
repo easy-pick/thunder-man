@@ -21,9 +21,12 @@ public class StoreController {
 	
 	@GetMapping("/store/{category}/{address1}/{page}")
 	public String store(@PathVariable long category, @PathVariable long address1, @PathVariable int page, Model model) {
-		
+
+		log.debug("parameter check : category = {}, address1 = {}, page = {} ", category, address1, page);
+
 		List<StoreResponse> storeList = storeService.storeList(category, address1 / 100).map(StoreResponse::from).toList();
-		log.debug("storeList :::  " + storeList);
+		log.debug("return values check : List<StoreResponse> = {} ", storeList);
+
 		model.addAttribute("storeList", storeList);
 
 		return "store/store";
@@ -32,7 +35,10 @@ public class StoreController {
 	@GetMapping("/store/{id}/detail")
 	public String storeDetail(@PathVariable long id, Model model) {
 
+		log.debug("parameter value check : id = {} ", id);
+
 		StoreWithFoodsResponse storeDetailDto = StoreWithFoodsResponse.from(storeService.storeDetail(id));
+		log.debug("return value check : StoreWithFoodsResponse = {}", storeDetailDto);
 
 		model.addAttribute("store", storeDetailDto);
 
